@@ -1,0 +1,9 @@
+1. Firstly need to install the sslcommerz-lib packages.
+2. If needed then create a separate app for payments.
+3. There needs the models of Transaction, PaymentGatewaySettings or something like that.
+4. Need to register those models into admin.py 
+5. Create a python file named sslcommerz.py and create some function as like "sslcommerz_payment_gateway" 
+    and fill up this function with proper configurations as like success_url, failed_url, tran_id, currency etc.
+
+6. Configure those urls inside urls.py
+7. And use this inside where the payment method needed.
