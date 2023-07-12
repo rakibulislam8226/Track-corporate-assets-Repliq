@@ -6,6 +6,7 @@ from rest_framework import status
 from rest_framework.test import APIClient
 from ..models import Company
 from ..serializers import CompanySerializer
+from .payloads import payload, payload2
 
 
 class TestCompanyModel(TestCase):
@@ -19,18 +20,8 @@ class TestCompanyModel(TestCase):
         self.update_company_url = reverse('update-company', kwargs={'pk': self.company.pk})
         self.list_company_url = reverse("view-all-company-list")
 
-        self.payload = {
-            'name': 'Example Company',
-            'location': '123 Main St',
-            'phone_number': '023943',
-            'website_url': 'https://docs.djangoproject12.com/'
-        }
-        self.payload2 = {
-            'name': 'Example Company',
-            'location': '123 Main St',
-            'phone_number': '023943',
-            'website_url': 'https://docs.djangoproject124.com/'
-        }
+        self.payload = payload
+        self.payload2 = payload2
 
 
     def test_company_model_exists(self):
