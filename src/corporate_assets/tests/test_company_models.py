@@ -6,7 +6,7 @@ from rest_framework import status
 from rest_framework.test import APIClient
 from ..models import Company
 from ..serializers import CompanySerializer
-from .payloads import payload, payload2
+from .test_data import payload, payload2
 
 
 class TestCompanyModel(TestCase):
