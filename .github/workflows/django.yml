@@ -1,23 +1,9 @@
-# name: Repliq Django Test
-# on: [pull_request, push] # activates the workflow when there is a push or pull request in the repo
-# jobs:
-#   test_project:
-#     runs-on: ubuntu-22.04 # operating system your code will run on
-#     steps:
-#       - uses: actions/checkout@v2
-#       # - uses: actions/setup-python@v2
-#       - run: pip install flake8
-#       - run: pip install -r requirements.txt # install all our dependencies for the project
-#       # - run: pytest . # run pytest test
-#       # - run: flake8 . # run flake8 test
-
 name: Repliq Django Test
 
-on: [pull_request, push]
-
+on: [pull_request, push] # activates the workflow when there is a push or pull request in the repo
 jobs:
-  tests:
-    runs-on: ubuntu-22.04
+  test_project:
+    runs-on: ubuntu-22.04 # operating system your code will run on
     
     steps:
     - uses: actions/checkout@v2
@@ -33,4 +19,7 @@ jobs:
         
     - name: Run Django tests
       run: |
-        python manage.py test
+        python src/manage.py test
+
+    # - run: pytest . # run pytest test
+    # - run: flake8 . # run flake8 test
